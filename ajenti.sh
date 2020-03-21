@@ -1,4 +1,6 @@
 #! /bin/bash
+# run using the command below 
+# source <(curl -s https://github.com/TsunayoshiSawada/Idk-/blob/master/ajenti.sh)
 lsb_release -a
 if [[ $(lsb_release -rs) == "16.04" ]]; then # replace 8.04 by the number of release you want
 
