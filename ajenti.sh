@@ -13,8 +13,8 @@ if [[ $(lsb_release -rs) == "16.04" ]]; then # replace 8.04 by the number of rel
       apt-get install ajenti -y 
       service ajenti restart 
       apt install python pip -y 
-      pip install --upgrade pip pip install speedtest-cli 
-      speedtest-cli
+      pip install --upgrade pip 
+      pip install speedtest-cli 
       sudo add-apt-repository ppa:certbot/certbot 
       sudo apt-get update 
       sudo apt-get install python-certbot-nginx -y 
@@ -24,6 +24,7 @@ if [[ $(lsb_release -rs) == "16.04" ]]; then # replace 8.04 by the number of rel
       sudo systemctl status ajenti 
       sudo systemctl restart ajenti 
       sudo systemctl restart nginx
+      speedtest-cli
 else
       echo "Non-compatible ubuntu version"
 fi
