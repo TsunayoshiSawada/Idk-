@@ -5,16 +5,16 @@ lsb_release -a
 if [[ $(lsb_release -rs) == "16.04" ]]; then # replace 8.04 by the number of release you want
 
       echo "Compatible version"
-      apt-get update 
-      apt-get install nginx fail2ban -y 
+      sudo apt-get update 
+      sudo apt-get install nginx fail2ban -y 
       wget http://repo.ajenti.org/debian/key -O- | apt-key add - 
-      echo "deb http://repo.ajenti.org/ng/debian main main ubuntu" >> /etc/apt/sources.list 
-      apt-get update 
-      apt-get install ajenti -y 
-      service ajenti restart 
-      apt install python pip -y 
-      pip install --upgrade pip 
-      pip install speedtest-cli 
+      echo "deb http://repo.ajenti.org/ng/debian main main ubuntu" >> sudo /etc/apt/sources.list 
+      sudo apt-get update 
+      sudo apt-get install ajenti -y 
+      sudo service ajenti restart 
+      sudo apt install python pip -y 
+      sudo pip install --upgrade pip 
+      sudo pip install speedtest-cli 
       sudo add-apt-repository ppa:certbot/certbot 
       sudo apt-get update 
       sudo apt-get install python-certbot-nginx -y 
